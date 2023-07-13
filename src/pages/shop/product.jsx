@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { ShopContext } from "../../context/shop-context";
 
-const Product = ({ title, price, image }) => {
+const Product = ({ id, title, price, image }) => {
+  const { addToCart, cartItems } = useContext(ShopContext);
+  const cartItemAmount = cartItems[id];
   return (
     <div class="col">
       <div class="card shadow-sm">
@@ -12,8 +15,12 @@ const Product = ({ title, price, image }) => {
               <button type="button" class="btn btn-sm btn-outline-secondary">
                 Buy
               </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">
-                Add to Cart
+              <button
+                type="button"
+                class="btn btn-sm btn-outline-secondary"
+                onClick={() => addToCart(id)}
+              >
+                Add to Cart {cartItemAmount > 0 && <>({cartItemAmount})</>}
               </button>
             </div>
             <small class="text-body-secondary">${price}</small>

@@ -10,9 +10,11 @@ const ProductGallery = () => {
             {PRODUCTS.map((prod) => {
               return (
                 <Product
+                  id={prod.id}
                   title={prod.productName}
                   price={prod.price}
                   image={prod.image}
+                  key={prod.id}
                 />
               );
             })}

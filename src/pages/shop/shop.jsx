@@ -1,23 +1,14 @@
 import React from "react";
-import { PRODUCTS } from "../../products";
-import Product from "./product";
+import ProductGallery from "./productGallery";
 
 const Shop = () => {
   return (
     <div className="shop">
-      <div className="mt-2">
+      <div className="mt-4">
         <h1>Hello There!</h1>
       </div>
       <div className="products">
-        {PRODUCTS.map((prod) => {
-          return (
-            <Product
-              title={prod.productName}
-              price={prod.price}
-              image={prod.image}
-            />
-          );
-        })}
+        <ProductGallery />
       </div>
     </div>
   );

@@ -20,6 +20,8 @@ const Cart = () => {
           if (cartItems[product.id] !== 0) {
             return <CartItem data={product} key={product.id} />;
           }
+
+          return;
         })}
       </div>
       {totalAmount > 0 ? (

@@ -7,7 +7,11 @@ const Product = ({ id, title, price, image }) => {
   return (
     <div class="col">
       <div class="card shadow-sm">
-        <img class="bd-placeholder-img card-img-top p-4" src={image} />
+        <img
+          alt={title}
+          class="bd-placeholder-img card-img-top p-4"
+          src={image}
+        />
         <div class="card-body">
           <p class="card-text">{title}</p>
           <div class="d-flex justify-content-between align-items-center">
